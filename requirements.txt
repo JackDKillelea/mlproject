@@ -1,0 +1,8 @@
+pandas
+numpy
+matplotlib
+ipykernel
+seaborn
+scikit-learn
+statsmodels
+-e . # This automatically triggers the setup.py file
