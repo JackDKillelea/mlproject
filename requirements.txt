@@ -5,4 +5,5 @@ ipykernel
 seaborn
 scikit-learn
 statsmodels
+dill
 #-e .

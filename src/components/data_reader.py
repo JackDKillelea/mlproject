@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from exception_handler import CustomException
 from logger import logging
+from data_transformer import DataTransformer, DataTransformationConfig
 
 @dataclass
 class DataReaderConfig():
@@ -37,8 +38,10 @@ class DataReader():
                 self.reader_config.train_data_path)
         except Exception as e:
             raise CustomException(e, sys)
-        
 
 if __name__ == "__main__":
-    obj = DataReader()
-    obj.initiate_data_reading()
+    dataReader = DataReader()
+    train_data, test_data = dataReader.initiate_data_reading()
+    
+    dataTransformer = DataTransformer()
+    dataTransformer.init_data_transformation(train_data, test_data)
